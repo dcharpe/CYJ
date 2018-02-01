@@ -1,0 +1,304 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="cyjModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012.Azure" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="ABOUT">
+          <Key>
+            <PropertyRef Name="aboutID" />
+          </Key>
+          <Property Name="aboutID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="aboutINFO" Type="varchar(max)" Nullable="false" />
+        </EntityType>
+        <EntityType Name="CorpsMemberExperience">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="teamName" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="workstreamName" Type="varchar(max)" Nullable="false" />
+          <Property Name="categoryName" Type="varchar(max)" Nullable="false" />
+          <Property Name="subcategoryName" Type="varchar(max)" Nullable="false" />
+          <Property Name="goalName" Type="varchar(max)" Nullable="false" />
+          <Property Name="goalValue" Type="int" />
+        </EntityType>
+        <EntityType Name="ExternalAffairs">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="teamName" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="workstreamName" Type="varchar(max)" Nullable="false" />
+          <Property Name="categoryName" Type="varchar(max)" Nullable="false" />
+          <Property Name="subcategoryName" Type="varchar(max)" Nullable="false" />
+          <Property Name="goalName" Type="varchar(max)" Nullable="false" />
+          <Property Name="goalValue" Type="int" />
+        </EntityType>
+        <EntityType Name="OpEx">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="teamName" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="workstreamName" Type="varchar(max)" Nullable="false" />
+          <Property Name="categoryName" Type="varchar(max)" Nullable="false" />
+          <Property Name="subcategoryName" Type="varchar(max)" Nullable="false" />
+          <Property Name="goalName" Type="varchar(max)" Nullable="false" />
+          <Property Name="goalValue" Type="int" />
+        </EntityType>
+        <EntityType Name="RAD">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="teamName" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="workstreamName" Type="varchar(max)" Nullable="false" />
+          <Property Name="categoryName" Type="varchar(max)" Nullable="false" />
+          <Property Name="subcategoryName" Type="varchar(max)" Nullable="false" />
+          <Property Name="goalName" Type="varchar(max)" Nullable="false" />
+          <Property Name="goalValue" Type="int" />
+        </EntityType>
+        <EntityType Name="Revenue">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="teamName" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="workstreamName" Type="varchar(max)" Nullable="false" />
+          <Property Name="categoryName" Type="varchar(max)" Nullable="false" />
+          <Property Name="subcategoryName" Type="varchar(max)" Nullable="false" />
+          <Property Name="goalName" Type="varchar(max)" Nullable="false" />
+          <Property Name="goalValue" Type="int" />
+        </EntityType>
+        <EntityType Name="ServiceDelivery">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="teamName" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="workstreamName" Type="varchar(max)" Nullable="false" />
+          <Property Name="categoryName" Type="varchar(max)" Nullable="false" />
+          <Property Name="subcategoryName" Type="varchar(max)" Nullable="false" />
+          <Property Name="goalName" Type="varchar(max)" Nullable="false" />
+          <Property Name="goalValue" Type="int" />
+        </EntityType>
+        <EntityContainer Name="cyjModelStoreContainer">
+          <EntitySet Name="ABOUT" EntityType="Self.ABOUT" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="CorpsMemberExperience" EntityType="Self.CorpsMemberExperience" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ExternalAffairs" EntityType="Self.ExternalAffairs" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="OpEx" EntityType="Self.OpEx" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="RAD" EntityType="Self.RAD" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Revenue" EntityType="Self.Revenue" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ServiceDelivery" EntityType="Self.ServiceDelivery" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="cyjModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="ABOUT">
+          <Key>
+            <PropertyRef Name="aboutID" />
+          </Key>
+          <Property Name="aboutID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="aboutINFO" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+        </EntityType>
+        <EntityType Name="CorpsMemberExperience">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="teamName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="workstreamName" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="categoryName" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="subcategoryName" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="goalName" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="goalValue" Type="Int32" />
+        </EntityType>
+        <EntityType Name="ExternalAffair">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="teamName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="workstreamName" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="categoryName" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="subcategoryName" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="goalName" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="goalValue" Type="Int32" />
+        </EntityType>
+        <EntityType Name="OpEx">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="teamName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="workstreamName" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="categoryName" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="subcategoryName" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="goalName" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="goalValue" Type="Int32" />
+        </EntityType>
+        <EntityType Name="RAD">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="teamName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="workstreamName" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="categoryName" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="subcategoryName" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="goalName" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="goalValue" Type="Int32" />
+        </EntityType>
+        <EntityType Name="Revenue">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="teamName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="workstreamName" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="categoryName" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="subcategoryName" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="goalName" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="goalValue" Type="Int32" />
+        </EntityType>
+        <EntityType Name="ServiceDelivery">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="teamName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="workstreamName" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="categoryName" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="subcategoryName" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="goalName" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="goalValue" Type="Int32" />
+        </EntityType>
+        <EntityContainer Name="cyjEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="ABOUTs" EntityType="Self.ABOUT" />
+          <EntitySet Name="CorpsMemberExperiences" EntityType="Self.CorpsMemberExperience" />
+          <EntitySet Name="ExternalAffairs" EntityType="Self.ExternalAffair" />
+          <EntitySet Name="OpExes" EntityType="Self.OpEx" />
+          <EntitySet Name="RADs" EntityType="Self.RAD" />
+          <EntitySet Name="Revenues" EntityType="Self.Revenue" />
+          <EntitySet Name="ServiceDeliveries" EntityType="Self.ServiceDelivery" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="cyjModelStoreContainer" CdmEntityContainer="cyjEntities">
+          <EntitySetMapping Name="ABOUTs">
+            <EntityTypeMapping TypeName="cyjModel.ABOUT">
+              <MappingFragment StoreEntitySet="ABOUT">
+                <ScalarProperty Name="aboutID" ColumnName="aboutID" />
+                <ScalarProperty Name="aboutINFO" ColumnName="aboutINFO" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CorpsMemberExperiences">
+            <EntityTypeMapping TypeName="cyjModel.CorpsMemberExperience">
+              <MappingFragment StoreEntitySet="CorpsMemberExperience">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="teamName" ColumnName="teamName" />
+                <ScalarProperty Name="workstreamName" ColumnName="workstreamName" />
+                <ScalarProperty Name="categoryName" ColumnName="categoryName" />
+                <ScalarProperty Name="subcategoryName" ColumnName="subcategoryName" />
+                <ScalarProperty Name="goalName" ColumnName="goalName" />
+                <ScalarProperty Name="goalValue" ColumnName="goalValue" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ExternalAffairs">
+            <EntityTypeMapping TypeName="cyjModel.ExternalAffair">
+              <MappingFragment StoreEntitySet="ExternalAffairs">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="teamName" ColumnName="teamName" />
+                <ScalarProperty Name="workstreamName" ColumnName="workstreamName" />
+                <ScalarProperty Name="categoryName" ColumnName="categoryName" />
+                <ScalarProperty Name="subcategoryName" ColumnName="subcategoryName" />
+                <ScalarProperty Name="goalName" ColumnName="goalName" />
+                <ScalarProperty Name="goalValue" ColumnName="goalValue" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="OpExes">
+            <EntityTypeMapping TypeName="cyjModel.OpEx">
+              <MappingFragment StoreEntitySet="OpEx">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="teamName" ColumnName="teamName" />
+                <ScalarProperty Name="workstreamName" ColumnName="workstreamName" />
+                <ScalarProperty Name="categoryName" ColumnName="categoryName" />
+                <ScalarProperty Name="subcategoryName" ColumnName="subcategoryName" />
+                <ScalarProperty Name="goalName" ColumnName="goalName" />
+                <ScalarProperty Name="goalValue" ColumnName="goalValue" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="RADs">
+            <EntityTypeMapping TypeName="cyjModel.RAD">
+              <MappingFragment StoreEntitySet="RAD">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="teamName" ColumnName="teamName" />
+                <ScalarProperty Name="workstreamName" ColumnName="workstreamName" />
+                <ScalarProperty Name="categoryName" ColumnName="categoryName" />
+                <ScalarProperty Name="subcategoryName" ColumnName="subcategoryName" />
+                <ScalarProperty Name="goalName" ColumnName="goalName" />
+                <ScalarProperty Name="goalValue" ColumnName="goalValue" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Revenues">
+            <EntityTypeMapping TypeName="cyjModel.Revenue">
+              <MappingFragment StoreEntitySet="Revenue">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="teamName" ColumnName="teamName" />
+                <ScalarProperty Name="workstreamName" ColumnName="workstreamName" />
+                <ScalarProperty Name="categoryName" ColumnName="categoryName" />
+                <ScalarProperty Name="subcategoryName" ColumnName="subcategoryName" />
+                <ScalarProperty Name="goalName" ColumnName="goalName" />
+                <ScalarProperty Name="goalValue" ColumnName="goalValue" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ServiceDeliveries">
+            <EntityTypeMapping TypeName="cyjModel.ServiceDelivery">
+              <MappingFragment StoreEntitySet="ServiceDelivery">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="teamName" ColumnName="teamName" />
+                <ScalarProperty Name="workstreamName" ColumnName="workstreamName" />
+                <ScalarProperty Name="categoryName" ColumnName="categoryName" />
+                <ScalarProperty Name="subcategoryName" ColumnName="subcategoryName" />
+                <ScalarProperty Name="goalName" ColumnName="goalName" />
+                <ScalarProperty Name="goalValue" ColumnName="goalValue" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

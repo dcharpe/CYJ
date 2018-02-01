@@ -17,86 +17,86 @@
         </style>
     </head>
 
-<body>
-    <center>
-    <center><h1><img src="~/Content/mytemplate/img/faces/servicedeliveryICON.png" style="width:60px; height:60px;" /> SERVICE DELIVERY</h1></center>
-        <script src="~/Scripts/code/highcharts.js"></script>
-        <script src="~/Scripts/code/modules/series-label.js"></script>
-        <script src="~/Scripts/code/modules/exporting.js"></script>
+    <body>
+        <center>
+            <center><h1><img src="~/Content/mytemplate/img/faces/servicedeliveryICON.png" style="width:60px; height:60px;" /> SERVICE DELIVERY</h1></center>
+            <script src="~/Scripts/code/highcharts.js"></script>
+            <script src="~/Scripts/code/modules/series-label.js"></script>
+            <script src="~/Scripts/code/modules/exporting.js"></script>
 
-        <div id="container"></div>
+            <div id="container"></div>
 
 
 
-        <script type="text/javascript">
-            Highcharts.setOptions({
-                colors: ['rgb(62, 194, 207)', 'rgb(241, 96, 74)', '#BCC65C', '#FBAE3B']
-            });
+            <script type="text/javascript">
+                Highcharts.setOptions({
+                    colors: ['rgb(62, 194, 207)', 'rgb(241, 96, 74)', '#BCC65C', '#FBAE3B']
+                });
 
-            Highcharts.chart('container', {
+                Highcharts.chart('container', {
 
-                title: {
-                    text: 'Service Delivery'
-                },
-
-                subtitle: {
-                    text: 'blahblahblah'
-                },
-
-                yAxis: {
                     title: {
-                        text: 'Performance'
-                    }
-                },
-                legend: {
-                    layout: 'vertical',
-                    align: 'right',
-                    verticalAlign: 'middle'
-                },
+                        text: 'Service Delivery'
+                    },
 
-                plotOptions: {
-                    series: {
-                        label: {
-                            connectorAllowed: false
-                        },
-                        pointStart: 1
-                    }
-                },
+                    subtitle: {
+                        text: 'blahblahblah'
+                    },
 
-                series: [{
-                    name: 'Math',
-                    data: [43934, 52503, 57177, 69658, 97031, 119931, 137133, 154175]
-                }, {
-                    name: 'ELA',
-                    data: [24916, 24064, 29742, 29851, 32490, 30282, 38121, 40434]
-                }, {
-                    name: 'Behavior',
-                    data: [11744, 17722, 16005, 19771, 20185, 24377, 32147, 39387]
-                }, {
-                    name: 'Attendance',
-                    data: [null, null, 7988, 12169, 15112, 22452, 34400, 34227]              
-                }],
-
-                responsive: {
-                    rules: [{
-                        condition: {
-                            maxWidth: 500
-                        },
-                        chartOptions: {
-                            legend: {
-                                layout: 'horizontal',
-                                align: 'center',
-                                verticalAlign: 'bottom'
-                            }
+                    yAxis: {
+                        title: {
+                            text: 'Performance'
                         }
-                    }]
-                }
+                    },
+                    legend: {
+                        layout: 'vertical',
+                        align: 'right',
+                        verticalAlign: 'middle'
+                    },
 
-            });
-        </script>
-        
-    </center> 
+                    plotOptions: {
+                        series: {
+                            label: {
+                                connectorAllowed: false
+                            },
+                            pointStart: 1
+                        }
+                    },
 
+                    series: [{
+                        name: 'Math',
+                        data: [43934, 52503, 57177, 69658, 97031, 119931, 137133, 154175]
+                    }, {
+                        name: 'ELA',
+                        data: [24916, 24064, 29742, 29851, 32490, 30282, 38121, 40434]
+                    }, {
+                        name: 'Behavior',
+                        data: [11744, 17722, 16005, 19771, 20185, 24377, 32147, 39387]
+                    }, {
+                        name: 'Attendance',
+                        data: [null, null, 7988, 12169, 15112, 22452, 34400, 34227]
+                    }],
 
-</body>
+                    responsive: {
+                        rules: [{
+                            condition: {
+                                maxWidth: 500
+                            },
+                            chartOptions: {
+                                legend: {
+                                    layout: 'horizontal',
+                                    align: 'center',
+                                    verticalAlign: 'bottom'
+                                }
+                            }
+                        }]
+                    }
+
+                });
+            </script>
+            <br />
+            @Html.ActionLink("View Goal Report", "Index", "ServiceDeliveries") |
+            @Html.ActionLink("Add a New Goal", "Create", "ServiceDeliveries")
+        </center>
+     </body>
 </html>
