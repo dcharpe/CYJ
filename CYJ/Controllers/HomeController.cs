@@ -4,9 +4,8 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 
-namespace CYJ.Controllers
+namespace UNFDash.Controllers
 {
-    [Authorize]
     public class HomeController : Controller
     {
         public ActionResult Index()
@@ -15,15 +14,38 @@ namespace CYJ.Controllers
         }
 
         public ActionResult About()
-        {
-            ViewBag.Message = "Your application description page.";
+        {      
 
             return View();
         }
 
-        public ActionResult Contact()
+        public ActionResult ServiceDelivery()
         {
-            ViewBag.Message = "Your contact page.";
+
+            return View();
+        }
+        public ActionResult CorpMemberExperience()
+        {
+
+            return View();
+        }
+        public ActionResult ExternalAffairs()
+        {
+
+            return View();
+        }
+        public ActionResult Revenue()
+        {
+
+            return View();
+        }
+        public ActionResult OPEX()
+        {
+
+            return View();
+        }
+        public ActionResult RAD()
+        {
 
             return View();
         }

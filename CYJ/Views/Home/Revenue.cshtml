@@ -1,0 +1,77 @@
+﻿@{
+    ViewBag.Title = "Revenue";
+    Layout = "~/Views/Shared/_mytemplate.cshtml";
+}
+
+<html>
+<head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <style type="text/css">
+            #container {
+                min-width: 310px;
+                max-width: 800px;
+                height: 500px;
+                margin: 0 auto
+            }
+        </style>
+    </head>
+
+
+<body>
+    <center><h1><img src="~/Content/mytemplate/img/faces/revenueicon.png" style="width:60px; height:60px;" />REVENUE</h1>
+        <script src="~/Scripts/code/highcharts.js"></script>
+        <script src="~/Scripts/code/modules/series-label.js"></script>
+        <script src="~/Scripts/code/modules/exporting.js"></script>
+
+        <div id="container"></div>
+
+        <script type="text/javascript">
+
+            Highcharts.setOptions({
+                colors: ['rgb(62, 194, 207)', 'rgb(241, 96, 74)', '#BCC65C', '#FBAE3B']
+            });
+            Highcharts.chart('container', {
+                chart: {
+                    type: 'column'
+                },
+                title: {
+                    text: 'Revenue'
+                },
+                xAxis: {
+                    categories: ['Revenue Goal', 'Key Constituent Giving Rates', 'Donor Retention', 'Number of Donors']
+                },
+                yAxis: {
+                    min: 0,
+                    title: {
+                        text: 'Value'
+                    }
+                },
+                tooltip: {
+                    pointFormat: '<span style="color:{series.color}">{series.name}</span>: <b>{point.y}</b> ({point.percentage:.0f}%)<br/>',
+                    shared: true
+                },
+                plotOptions: {
+                    column: {
+                        stacking: 'percent'
+                    }
+                },
+                series: [{
+                    name: 'Q1',
+                    data: [5, 3, 4, 7]
+                }, {
+                    name: 'Q2',
+                    data: [2, 2, 3, 2]
+                }, {
+                    name: 'Q3',
+                    data: [3, 4, 4, 2]
+                }, {
+                    name: 'Q4',
+                    data: [3, 2, 4, 2]
+                }]
+
+            });
+        </script>
+        </center>
+</body>
+</html>

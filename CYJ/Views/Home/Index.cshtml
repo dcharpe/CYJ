@@ -1,7 +1,431 @@
 ﻿@{
     ViewBag.Title = "Home Page";
+    Layout = "~/Views/Shared/_mytemplate.cshtml";
 }
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type="text/css">
+        #container, #container2,#container3{
+            min-width: 310px;
+            max-width: 475px;
+            width: 500px;
+            height: 350px;
+            padding-left: 10px;
+            padding-right: 10px;
+            float: left;
+            
+        }
+        #container4, #container5, #container6 {
 
-<div class="jumbotron">
-    <h1>Impact Dashboard</h1>
-</div>
+            min-width: 310px;
+            max-width: 475px;
+            width: 500px;
+            height: 350px;
+            padding-left: 10px;
+            padding-right: 10px;
+            padding-top: 10px;
+            float: left;
+        }
+    </style>
+
+</head>
+
+
+
+
+<body>
+    <script src="~/Scripts/code/highcharts.js"></script>
+    <script src="~/Scripts/code/modules/series-label.js"></script>
+    <script src="~/Scripts/code/modules/exporting.js"></script>
+    <center><h1><img src="~/Content/mytemplate/img/faces/overviewICON.png" style="width:90px; height:50px;" />DASHBOARD OVERVIEW</h1></center>
+
+    <!--Service Delivery-->
+    <div id="container"></div>
+    <script type="text/javascript">
+        Highcharts.setOptions({
+            colors: ['rgb(62, 194, 207)', 'rgb(241, 96, 74)', '#BCC65C', '#FBAE3B']
+        });
+
+        Highcharts.chart('container', {
+
+            title: {
+                text: 'Service Delivery'
+            },
+
+            subtitle: {
+                text: 'blahblahblah'
+            },
+
+            yAxis: {
+                title: {
+                    text: 'Performance'
+                }
+            },
+            legend: {
+                layout: 'vertical',
+                align: 'right',
+                verticalAlign: 'middle'
+            },
+
+            plotOptions: {
+                series: {
+                    label: {
+                        connectorAllowed: false
+                    },
+                    pointStart: 1
+                }
+            },
+
+            series: [{
+                name: 'Math',
+                data: [43934, 52503, 57177, 69658, 97031, 119931, 137133, 154175]
+            }, {
+                name: 'ELA',
+                data: [24916, 24064, 29742, 29851, 32490, 30282, 38121, 40434]
+            }, {
+                name: 'Behavior',
+                data: [11744, 17722, 16005, 19771, 20185, 24377, 32147, 39387]
+            }, {
+                name: 'Attendance',
+                data: [null, null, 7988, 12169, 15112, 22452, 34400, 34227]
+            }],
+
+            responsive: {
+                rules: [{
+                    condition: {
+                        maxWidth: 500
+                    },
+                    chartOptions: {
+                        legend: {
+                            layout: 'horizontal',
+                            align: 'center',
+                            verticalAlign: 'bottom'
+                        }
+                    }
+                }]
+            }
+
+        });
+    </script>
+
+    <!--Corp Member Experience-->
+    <div id="container2"></div>
+    <script type="text/javascript">
+        Highcharts.setOptions({
+            colors: ['rgb(62, 194, 207)', 'rgb(241, 96, 74)', '#BCC65C', '#FBAE3B']
+        });
+        Highcharts.chart('container2', {
+            chart: {
+                type: 'bar'
+            },
+            title: {
+                text: 'Corp Member Experience'
+            },
+            subtitle: {
+                text: 'blahblahblah'
+            },
+            xAxis: {
+                categories: ['Americorp Retention', 'ACM Net Promoter Score', 'Team Leaders', '2nd Year ACM'],
+                title: {
+                    text: null
+                }
+            },
+            yAxis: {
+                min: 0,
+                title: {
+                    text: 'Rate',
+                    align: 'high'
+                },
+                labels: {
+                    overflow: 'justify'
+                }
+            },
+            tooltip: {
+                valueSuffix: ' '
+            },
+            plotOptions: {
+                bar: {
+                    dataLabels: {
+                        enabled: true
+                    }
+                }
+            },
+            legend: {
+                layout: 'vertical',
+                align: 'right',
+                verticalAlign: 'top',
+                x: -40,
+                y: 80,
+                floating: true,
+                borderWidth: 1,
+                backgroundColor: ((Highcharts.theme && Highcharts.theme.legendBackgroundColor) || '#FFFFFF'),
+                shadow: true
+            },
+            credits: {
+                enabled: false
+            },
+            series: [{
+                name: 'Q1',
+                data: [107, 31, 635, 203, 2]
+            }, {
+                name: 'Q2',
+                data: [133, 156, 947, 408, 6]
+            }, {
+                name: 'Q3',
+                data: [1052, 954, 4250, 740, 38]
+            }, {
+                name: 'Q4',
+                data: [143, 354, 543, 345, 1000]
+
+            }]
+        });
+    </script>
+
+    <!--External Affairs-->
+    <div id="container3"></div>
+
+    <script type="text/javascript">
+        Highcharts.setOptions({
+            colors: ['rgb(62, 194, 207)', 'rgb(241, 96, 74)', '#BCC65C', '#FBAE3B']
+        });
+        Highcharts.chart('container3', {
+            chart: {
+                plotBackgroundColor: null,
+                plotBorderWidth: null,
+                plotShadow: false,
+                type: 'pie'
+            },
+            title: {
+                text: 'External Affairs'
+            },
+            tooltip: {
+                pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
+            },
+            plotOptions: {
+                pie: {
+                    allowPointSelect: true,
+                    cursor: 'pointer',
+                    dataLabels: {
+                        enabled: true,
+                        format: '<b>{point.name}</b>: {point.percentage:.1f} %',
+                        style: {
+                            color: (Highcharts.theme && Highcharts.theme.contrastTextColor) || 'black'
+                        }
+                    }
+                }
+            },
+            series: [{
+                name: 'Brands',
+                colorByPoint: true,
+                data: [{
+                    name: 'Elected Officials',
+                    y: 56.33
+                }, {
+                    name: 'Community Engagements',
+                    y: 24.03,
+                    sliced: true,
+                    selected: true
+                }, {
+                    name: 'Event Attendees',
+                    y: 10.38
+                }, {
+                    name: 'Volunteers Engaged',
+                    y: 4.77
+                }]
+            }]
+        });
+    </script>
+
+    <!--Revenue-->
+
+    <div id="container4"></div>
+
+    <script type="text/javascript">
+
+        Highcharts.setOptions({
+            colors: ['rgb(62, 194, 207)', 'rgb(241, 96, 74)', '#BCC65C', '#FBAE3B']
+        });
+        Highcharts.chart('container4', {
+            chart: {
+                type: 'column'
+            },
+            title: {
+                text: 'Revenue'
+            },
+            xAxis: {
+                categories: ['Revenue Goal', 'Key Constituent Giving Rates', 'Donor Retention', 'Number of Donors']
+            },
+            yAxis: {
+                min: 0,
+                title: {
+                    text: 'Value'
+                }
+            },
+            tooltip: {
+                pointFormat: '<span style="color:{series.color}">{series.name}</span>: <b>{point.y}</b> ({point.percentage:.0f}%)<br/>',
+                shared: true
+            },
+            plotOptions: {
+                column: {
+                    stacking: 'percent'
+                }
+            },
+            series: [{
+                name: 'Q1',
+                data: [5, 3, 4, 7]
+            }, {
+                name: 'Q2',
+                data: [2, 2, 3, 2]
+            }, {
+                name: 'Q3',
+                data: [3, 4, 4, 2]
+            }, {
+                name: 'Q4',
+                data: [3, 2, 4, 2]
+            }]
+
+        });
+    </script>
+
+    <!--OPEX-->
+
+    <div id="container5"></div>
+
+    <script type="text/javascript">
+        Highcharts.setOptions({
+            colors: ['rgb(62, 194, 207)', '#BCC65C', '#BCC65C', '#FBAE3B']
+        });
+
+        Highcharts.chart('container5', {
+
+            title: {
+                text: 'OPEX'
+            },
+
+            subtitle: {
+                text: 'blahblahblah'
+            },
+
+            yAxis: {
+                title: {
+                    text: 'Performance'
+                }
+            },
+            legend: {
+                layout: 'vertical',
+                align: 'right',
+                verticalAlign: 'middle'
+            },
+
+            plotOptions: {
+                series: {
+                    label: {
+                        connectorAllowed: false
+                    },
+                    pointStart: 1
+                }
+            },
+
+            series: [{
+                name: 'Expense Management',
+                data: [43934, 52503, 57177, 69658, 97031, 119931, 137133, 154175]
+            }, {
+                name: 'Net Promoter Score',
+                data: [24916, 24064, 29742, 29851, 32490, 30282, 38121, 40434]
+
+            }],
+
+            responsive: {
+                rules: [{
+                    condition: {
+                        maxWidth: 500
+                    },
+                    chartOptions: {
+                        legend: {
+                            layout: 'horizontal',
+                            align: 'center',
+                            verticalAlign: 'bottom'
+                        }
+                    }
+                }]
+            }
+
+        });
+    </script>
+
+
+    <!--RAD-->
+    <div id="container6"></div>
+
+    <script type="text/javascript">
+        Highcharts.setOptions({
+            colors: ['rgb(62, 194, 207)', 'rgb(241, 96, 74)', '#BCC65C', '#FBAE3B']
+        });
+
+        Highcharts.chart('container6', {
+            chart: {
+                plotBackgroundColor: null,
+                plotBorderWidth: 0,
+                plotShadow: false
+            },
+            title: {
+                text: 'RAD',
+                align: 'center',
+                verticalAlign: 'middle',
+                y: 40
+            },
+            tooltip: {
+                pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
+            },
+            plotOptions: {
+                pie: {
+                    dataLabels: {
+                        enabled: true,
+                        distance: -50,
+                        style: {
+                            fontWeight: 'bold',
+                            color: 'white'
+                        }
+                    },
+                    startAngle: -90,
+                    endAngle: 90,
+                    center: ['50%', '75%']
+                }
+            },
+            series: [{
+                type: 'pie',
+                name: 'Browser share',
+                innerSize: '50%',
+                data: [
+                    ['Applications to Jacksonville', 10.38],
+                    ['Number of Offers', 56.33],
+                    ['Number of Confirmations', 24.03],
+
+                    {
+                        name: 'Proprietary or Undetectable',
+                        y: 0.2,
+                        dataLabels: {
+                            enabled: false
+                        }
+                    }
+                ]
+            }]
+        });
+
+
+    </script>
+
+
+
+
+
+
+
+
+
+        
+
+</body>
+</html>
