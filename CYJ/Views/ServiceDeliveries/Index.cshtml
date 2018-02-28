@@ -1,0 +1,62 @@
+﻿@model IEnumerable<CYJ.Models.ServiceDelivery>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_mytemplate.cshtml";
+}
+<center><img src="~/Content/mytemplate/img/faces/servicedeliveryICON.png" style="width:60px; height:60px;" /><h2>Service Delivery</h2></center>
+
+<p>
+    @Html.ActionLink("Add a New Goal", "Create")
+</p>
+<h3>Goals</h3>
+<table class="table">
+    <tr>
+        <!--<th>
+           @* @Html.DisplayNameFor(model => model.teamName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.workstreamName)*@
+        </th>-->
+        <th>
+            @Html.DisplayNameFor(model => model.categoryName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.subcategoryName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.goalName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.goalValue)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <!--<td>
+            @*@Html.DisplayFor(modelItem => item.teamName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.workstreamName)*@
+        </td>-->
+        <td>
+            @Html.DisplayFor(modelItem => item.categoryName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.subcategoryName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.goalName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.goalValue)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.id }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.id })
+        </td>
+    </tr>
+}
+</table>

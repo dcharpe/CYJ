@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@ViewBag.Title - My ASP.NET Application</title>
+    <title>@ViewBag.Title - City Year Jacksonville</title>
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
     @Scripts.Render("~/bundles/ckeditor")
@@ -22,10 +22,14 @@
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
                     <li>@Html.ActionLink("About", "About", "Home")</li>
+<<<<<<< HEAD
                     <li>@Html.ActionLink("DropDown", "Charts", "Home")</li>
                     <li>@Html.ActionLink("Add Goals", "Inserts", "Home")</li>
                     <li>@Html.ActionLink("Display", "AboutDisplay", "Home")</li>
                     <li>@Html.ActionLink("Editor", "AddDisplay", "Home")</li>
+=======
+                    <li>@Html.ActionLink("Service Delivery","Details","ServiceDeliveries")</li>
+>>>>>>> bc2f9c60fded92929a0afc259a4ca2d91d76c675
                 </ul>
                 @Html.Partial("_LoginPartial")
             </div>
