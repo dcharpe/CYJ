@@ -1,0 +1,334 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="fulldbModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012.Azure" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="AGOAL">
+          <Key>
+            <PropertyRef Name="agoalID" />
+          </Key>
+          <Property Name="agoalID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="agoalValue" Type="int" />
+          <Property Name="subcategID" Type="int" />
+        </EntityType>
+        <EntityType Name="CATEGORY">
+          <Key>
+            <PropertyRef Name="categID" />
+          </Key>
+          <Property Name="categID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="categName" Type="varchar" MaxLength="255" />
+          <Property Name="wstreamID" Type="int" />
+        </EntityType>
+        <EntityType Name="POST">
+          <Key>
+            <PropertyRef Name="postID" />
+          </Key>
+          <Property Name="postID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="postTitle" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="postContent" Type="varchar" MaxLength="255" />
+          <Property Name="createTime" Type="datetime" />
+          <Property Name="updateTime" Type="datetime" />
+        </EntityType>
+        <EntityType Name="QfourGOAL">
+          <Key>
+            <PropertyRef Name="qfourgoalID" />
+          </Key>
+          <Property Name="qfourgoalID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="qfourgoalValue" Type="int" />
+          <Property Name="agoalID" Type="int" />
+        </EntityType>
+        <EntityType Name="QoneGOAL">
+          <Key>
+            <PropertyRef Name="qonegoalID" />
+          </Key>
+          <Property Name="qonegoalID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="qonegoalValue" Type="int" />
+          <Property Name="agoalID" Type="int" />
+        </EntityType>
+        <EntityType Name="QthreeGOAL">
+          <Key>
+            <PropertyRef Name="qthreegoalID" />
+          </Key>
+          <Property Name="qthreegoalID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="qthreegoalValue" Type="int" />
+          <Property Name="agoalID" Type="int" />
+        </EntityType>
+        <EntityType Name="QtwoGOAL">
+          <Key>
+            <PropertyRef Name="qtwogoalID" />
+          </Key>
+          <Property Name="qtwogoalID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="qtwogoalValue" Type="int" />
+          <Property Name="agoalID" Type="int" />
+        </EntityType>
+        <EntityType Name="SUBCATEGORY">
+          <Key>
+            <PropertyRef Name="subcategID" />
+          </Key>
+          <Property Name="subcategID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="subcategName" Type="varchar" MaxLength="255" />
+          <Property Name="categID" Type="int" />
+        </EntityType>
+        <EntityType Name="TEAM">
+          <Key>
+            <PropertyRef Name="teamID" />
+          </Key>
+          <Property Name="teamID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="teamName" Type="varchar" MaxLength="255" />
+        </EntityType>
+        <EntityType Name="WSTREAM">
+          <Key>
+            <PropertyRef Name="wstreamID" />
+          </Key>
+          <Property Name="wstreamID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="wstreamName" Type="varchar" MaxLength="255" />
+          <Property Name="teamID" Type="int" />
+        </EntityType>
+        <Function Name="InsertInto" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="teamName" Type="varchar" Mode="In" />
+          <Parameter Name="wstreamName" Type="varchar" Mode="In" />
+          <Parameter Name="categName" Type="varchar" Mode="In" />
+          <Parameter Name="subcategName" Type="varchar" Mode="In" />
+          <Parameter Name="agoalValue" Type="int" Mode="In" />
+        </Function>
+        <EntityContainer Name="fulldbModelStoreContainer">
+          <EntitySet Name="AGOAL" EntityType="Self.AGOAL" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="CATEGORY" EntityType="Self.CATEGORY" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="POST" EntityType="Self.POST" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="QfourGOAL" EntityType="Self.QfourGOAL" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="QoneGOAL" EntityType="Self.QoneGOAL" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="QthreeGOAL" EntityType="Self.QthreeGOAL" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="QtwoGOAL" EntityType="Self.QtwoGOAL" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="SUBCATEGORY" EntityType="Self.SUBCATEGORY" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TEAM" EntityType="Self.TEAM" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="WSTREAM" EntityType="Self.WSTREAM" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="fulldbModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="AGOAL">
+          <Key>
+            <PropertyRef Name="agoalID" />
+          </Key>
+          <Property Name="agoalID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="agoalValue" Type="Int32" />
+          <Property Name="subcategID" Type="Int32" />
+        </EntityType>
+        <EntityType Name="CATEGORY">
+          <Key>
+            <PropertyRef Name="categID" />
+          </Key>
+          <Property Name="categID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="categName" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="wstreamID" Type="Int32" />
+        </EntityType>
+        <EntityType Name="POST">
+          <Key>
+            <PropertyRef Name="postID" />
+          </Key>
+          <Property Name="postID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="postTitle" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="postContent" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="createTime" Type="DateTime" Precision="3" />
+          <Property Name="updateTime" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="QfourGOAL">
+          <Key>
+            <PropertyRef Name="qfourgoalID" />
+          </Key>
+          <Property Name="qfourgoalID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="qfourgoalValue" Type="Int32" />
+          <Property Name="agoalID" Type="Int32" />
+        </EntityType>
+        <EntityType Name="QoneGOAL">
+          <Key>
+            <PropertyRef Name="qonegoalID" />
+          </Key>
+          <Property Name="qonegoalID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="qonegoalValue" Type="Int32" />
+          <Property Name="agoalID" Type="Int32" />
+        </EntityType>
+        <EntityType Name="QthreeGOAL">
+          <Key>
+            <PropertyRef Name="qthreegoalID" />
+          </Key>
+          <Property Name="qthreegoalID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="qthreegoalValue" Type="Int32" />
+          <Property Name="agoalID" Type="Int32" />
+        </EntityType>
+        <EntityType Name="QtwoGOAL">
+          <Key>
+            <PropertyRef Name="qtwogoalID" />
+          </Key>
+          <Property Name="qtwogoalID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="qtwogoalValue" Type="Int32" />
+          <Property Name="agoalID" Type="Int32" />
+        </EntityType>
+        <EntityType Name="SUBCATEGORY">
+          <Key>
+            <PropertyRef Name="subcategID" />
+          </Key>
+          <Property Name="subcategID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="subcategName" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="categID" Type="Int32" />
+        </EntityType>
+        <EntityType Name="TEAM">
+          <Key>
+            <PropertyRef Name="teamID" />
+          </Key>
+          <Property Name="teamID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="teamName" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="WSTREAM">
+          <Key>
+            <PropertyRef Name="wstreamID" />
+          </Key>
+          <Property Name="wstreamID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="wstreamName" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="teamID" Type="Int32" />
+        </EntityType>
+        <EntityContainer Name="fullEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="AGOALs" EntityType="Self.AGOAL" />
+          <EntitySet Name="CATEGORies" EntityType="Self.CATEGORY" />
+          <EntitySet Name="POSTs" EntityType="Self.POST" />
+          <EntitySet Name="QfourGOALs" EntityType="Self.QfourGOAL" />
+          <EntitySet Name="QoneGOALs" EntityType="Self.QoneGOAL" />
+          <EntitySet Name="QthreeGOALs" EntityType="Self.QthreeGOAL" />
+          <EntitySet Name="QtwoGOALs" EntityType="Self.QtwoGOAL" />
+          <EntitySet Name="SUBCATEGORies" EntityType="Self.SUBCATEGORY" />
+          <EntitySet Name="TEAMs" EntityType="Self.TEAM" />
+          <EntitySet Name="WSTREAMs" EntityType="Self.WSTREAM" />
+          <FunctionImport Name="InsertInto">
+            <Parameter Name="teamName" Mode="In" Type="String" />
+            <Parameter Name="wstreamName" Mode="In" Type="String" />
+            <Parameter Name="categName" Mode="In" Type="String" />
+            <Parameter Name="subcategName" Mode="In" Type="String" />
+            <Parameter Name="agoalValue" Mode="In" Type="Int32" />
+          </FunctionImport>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="fulldbModelStoreContainer" CdmEntityContainer="fullEntities">
+          <EntitySetMapping Name="AGOALs">
+            <EntityTypeMapping TypeName="fulldbModel.AGOAL">
+              <MappingFragment StoreEntitySet="AGOAL">
+                <ScalarProperty Name="agoalID" ColumnName="agoalID" />
+                <ScalarProperty Name="agoalValue" ColumnName="agoalValue" />
+                <ScalarProperty Name="subcategID" ColumnName="subcategID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CATEGORies">
+            <EntityTypeMapping TypeName="fulldbModel.CATEGORY">
+              <MappingFragment StoreEntitySet="CATEGORY">
+                <ScalarProperty Name="categID" ColumnName="categID" />
+                <ScalarProperty Name="categName" ColumnName="categName" />
+                <ScalarProperty Name="wstreamID" ColumnName="wstreamID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="POSTs">
+            <EntityTypeMapping TypeName="fulldbModel.POST">
+              <MappingFragment StoreEntitySet="POST">
+                <ScalarProperty Name="postID" ColumnName="postID" />
+                <ScalarProperty Name="postTitle" ColumnName="postTitle" />
+                <ScalarProperty Name="postContent" ColumnName="postContent" />
+                <ScalarProperty Name="createTime" ColumnName="createTime" />
+                <ScalarProperty Name="updateTime" ColumnName="updateTime" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="QfourGOALs">
+            <EntityTypeMapping TypeName="fulldbModel.QfourGOAL">
+              <MappingFragment StoreEntitySet="QfourGOAL">
+                <ScalarProperty Name="qfourgoalID" ColumnName="qfourgoalID" />
+                <ScalarProperty Name="qfourgoalValue" ColumnName="qfourgoalValue" />
+                <ScalarProperty Name="agoalID" ColumnName="agoalID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="QoneGOALs">
+            <EntityTypeMapping TypeName="fulldbModel.QoneGOAL">
+              <MappingFragment StoreEntitySet="QoneGOAL">
+                <ScalarProperty Name="qonegoalID" ColumnName="qonegoalID" />
+                <ScalarProperty Name="qonegoalValue" ColumnName="qonegoalValue" />
+                <ScalarProperty Name="agoalID" ColumnName="agoalID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="QthreeGOALs">
+            <EntityTypeMapping TypeName="fulldbModel.QthreeGOAL">
+              <MappingFragment StoreEntitySet="QthreeGOAL">
+                <ScalarProperty Name="qthreegoalID" ColumnName="qthreegoalID" />
+                <ScalarProperty Name="qthreegoalValue" ColumnName="qthreegoalValue" />
+                <ScalarProperty Name="agoalID" ColumnName="agoalID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="QtwoGOALs">
+            <EntityTypeMapping TypeName="fulldbModel.QtwoGOAL">
+              <MappingFragment StoreEntitySet="QtwoGOAL">
+                <ScalarProperty Name="qtwogoalID" ColumnName="qtwogoalID" />
+                <ScalarProperty Name="qtwogoalValue" ColumnName="qtwogoalValue" />
+                <ScalarProperty Name="agoalID" ColumnName="agoalID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SUBCATEGORies">
+            <EntityTypeMapping TypeName="fulldbModel.SUBCATEGORY">
+              <MappingFragment StoreEntitySet="SUBCATEGORY">
+                <ScalarProperty Name="subcategID" ColumnName="subcategID" />
+                <ScalarProperty Name="subcategName" ColumnName="subcategName" />
+                <ScalarProperty Name="categID" ColumnName="categID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TEAMs">
+            <EntityTypeMapping TypeName="fulldbModel.TEAM">
+              <MappingFragment StoreEntitySet="TEAM">
+                <ScalarProperty Name="teamID" ColumnName="teamID" />
+                <ScalarProperty Name="teamName" ColumnName="teamName" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="WSTREAMs">
+            <EntityTypeMapping TypeName="fulldbModel.WSTREAM">
+              <MappingFragment StoreEntitySet="WSTREAM">
+                <ScalarProperty Name="wstreamID" ColumnName="wstreamID" />
+                <ScalarProperty Name="wstreamName" ColumnName="wstreamName" />
+                <ScalarProperty Name="teamID" ColumnName="teamID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="InsertInto" FunctionName="fulldbModel.Store.InsertInto" />
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

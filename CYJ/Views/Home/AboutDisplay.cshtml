@@ -1,0 +1,16 @@
+﻿@model IEnumerable<CYJ.Models.WSViewModel>
+@{
+    ViewBag.Title = "AboutDisplay";
+    Layout = null;
+}
+
+<h2>AboutDisplay</h2>
+
+
+<div class="container">
+    @foreach (var Item in Model)
+    {
+        <h1>@Html.Raw(Item.postTitle)</h1>
+        <p>@Html.Raw(Item.postContent)</p>
+    }
+</div>

@@ -1,0 +1,52 @@
+﻿@model IEnumerable<CYJ.Models.WSViewModel>
+@{
+    ViewBag.Title = "AddDisplay";
+    Layout = null;
+}
+
+<link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+<script src="~/Scripts/jquery-1.10.2.min.js"></script>
+<script src="~/Scripts/ckeditor/ckeditor.js"></script>
+
+@using (Html.BeginForm())
+{
+    <form>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-2">
+                    <div class="form-group">
+                        <label>Post Title</label>
+                    </div>
+                </div>
+                <div class="col-md-10">
+                    <div class="form-group">
+                        <input class="form-control" placeholder="Enter Your Post" name="postTitle" />
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-2">
+                    <div class="form-group">
+                        <label>Write Your Post</label>
+                    </div>
+                </div>
+                <div class="col-md-10">
+                    <div class="form-group">
+                        <textarea class="ckeditor" name="postContent"></textarea>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-2">
+                    <div class="form-group">
+                    </div>
+                </div>
+                <div class="col-md-10">
+                    <div class="form-group">
+                        <input type="submit" value="Post" class="btn btn-block btn-danger" />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+}
